@@ -4,7 +4,49 @@
   <url>
     <loc>http://example.com/about/index.html</loc>
     
-    <lastmod>2020-10-16</lastmod>
+    <lastmod>2020-10-17</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/comments/index.html</loc>
+    
+    <lastmod>2020-10-17</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/link/index.html</loc>
+    
+    <lastmod>2020-10-17</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/categories/index.html</loc>
+    
+    <lastmod>2020-10-17</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/index.html</loc>
+    
+    <lastmod>2020-10-17</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2020/10/14/hello-world/</loc>
+    
+    <lastmod>2020-10-17</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2020/10/15/markdown%20%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0/</loc>
+    
+    <lastmod>2020-10-17</lastmod>
     
   </url>
   
@@ -23,44 +65,9 @@
   </url>
   
   <url>
-    <loc>http://example.com/link/index.html</loc>
-    
-    <lastmod>2020-10-16</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://example.com/music/index.html</loc>
     
     <lastmod>2020-10-16</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2020/10/16/markdown%20%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0/</loc>
-    
-    <lastmod>2020-10-16</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/categories/index.html</loc>
-    
-    <lastmod>2020-10-16</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/index.html</loc>
-    
-    <lastmod>2020-10-16</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2020/10/16/hello-world/</loc>
-    
-    <lastmod>2020-10-13</lastmod>
     
   </url>
   
