@@ -67,7 +67,7 @@
 
   <url>
     <loc>http://example.com/</loc>
-    <lastmod>2020-10-16</lastmod>
+    <lastmod>2020-10-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -75,7 +75,7 @@
   
   <url>
     <loc>http://example.com/tags/Markdown/</loc>
-    <lastmod>2020-10-16</lastmod>
+    <lastmod>2020-10-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
