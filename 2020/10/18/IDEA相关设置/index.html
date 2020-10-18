@@ -1,0 +1,263 @@
+<!DOCTYPE html><html lang="zh-cn" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>IDEA相关配置 | Southblock's Blogs</title><meta name="author" content="Southblock"><meta name="copyright" content="Southblock"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="此篇写作目的仅为便于本人今后进行IDEA相关设置，主要参考bilibili IT楠老师 的视频 链接在文末">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IDEA相关配置">
+<meta property="og:url" content="http://example.com/2020/10/18/IDEA%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/index.html">
+<meta property="og:site_name" content="Southblock&#39;s Blogs">
+<meta property="og:description" content="此篇写作目的仅为便于本人今后进行IDEA相关设置，主要参考bilibili IT楠老师 的视频 链接在文末">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
+<meta property="article:published_time" content="2020-10-18T05:11:00.000Z">
+<meta property="article:modified_time" content="2020-10-18T05:11:00.000Z">
+<meta property="article:author" content="Southblock">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2020/10/18/IDEA%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2020-10-18 13:11:00'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {
+  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }
+})()</script><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Southblock's Blogs" type="application/atom+xml">
+</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/head.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">Articles</div><div class="length_num">3</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">Tags</div><div class="length_num">1</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-history"></i><span> 历史博客</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 关于</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于作者</span></a></li><li><a class="site-page" href="/comments/"><i class="fa-fw far fa-edit"></i><span> 留言板</span></a></li></ul></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Southblock's Blogs</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-history"></i><span> 历史博客</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 关于</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于作者</span></a></li><li><a class="site-page" href="/comments/"><i class="fa-fw far fa-edit"></i><span> 留言板</span></a></li></ul></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">IDEA相关配置</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2020-10-18T05:11:00.000Z" title="Created 2020-10-18 13:11:00">2020-10-18</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2020-10-18T05:11:00.000Z" title="Updated 2020-10-18 13:11:00">2020-10-18</time></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="IDEA相关设置"><a href="#IDEA相关设置" class="headerlink" title="IDEA相关设置"></a>IDEA相关设置</h1><p><strong>本篇</strong></p>
+<p>Appearance &amp;Behavior 外观和行为</p>
+<p>Keymap 快捷键</p>
+<p>Editor 编辑器设置</p>
+<p>Plugins 插件</p>
+<p>Version Control 版本控制</p>
+<p>Build，Execution，Deployment 构建，执行，部署</p>
+<p>Language &amp; Frameworks 语言和框架</p>
+<p>Tools 工具集</p>
+<h2 id="看着爽"><a href="#看着爽" class="headerlink" title="看着爽"></a>看着爽</h2><h3 id="1-字体设置"><a href="#1-字体设置" class="headerlink" title="1.字体设置"></a>1.字体设置</h3><p>File-&gt;settings-&gt;Editor-&gt;Font-&gt;</p>
+<h3 id="2-主题设置"><a href="#2-主题设置" class="headerlink" title="2.主题设置"></a>2.主题设置</h3><p>File-&gt;settings-&gt;Apperance &amp; Behavior-&gt;Appearance-&gt;</p>
+<h3 id="3-设置鼠标悬浮提示"><a href="#3-设置鼠标悬浮提示" class="headerlink" title="3.设置鼠标悬浮提示"></a>3.设置鼠标悬浮提示</h3><p>File-&gt;settings-&gt;Editor-&gt;Code Editing-&gt;勾选Show quick documenttation</p>
+<h3 id="4-显示方法分割符"><a href="#4-显示方法分割符" class="headerlink" title="4.显示方法分割符"></a>4.显示方法分割符</h3><p>File-&gt;settings-&gt;Editor-&gt;General-&gt;Appearance-&gt;</p>
+<h2 id="用着爽"><a href="#用着爽" class="headerlink" title="用着爽"></a>用着爽</h2><h3 id="1-忽略大小写-提示"><a href="#1-忽略大小写-提示" class="headerlink" title="1.忽略大小写 提示"></a>1.忽略大小写 提示</h3><p>File-&gt;settings-&gt;Editor-&gt;General-&gt;Code Completion-&gt;取消勾选 Match case</p>
+<h3 id="2-自动导包，自动优化导包"><a href="#2-自动导包，自动优化导包" class="headerlink" title="2.自动导包，自动优化导包"></a>2.自动导包，自动优化导包</h3><p>File-&gt;settings-&gt;Editor-&gt;general-&gt;Auto Import-&gt;勾选Add unambiguous imports on the fly:快速添加导入</p>
+<p>File-&gt;settings-&gt;Editor-&gt;general-&gt;Auto Import-&gt;勾选Optimize imports on the fly:快速优化导入（删除无用的导入包）</p>
+<h3 id="3-IDEA统一编码文件编码"><a href="#3-IDEA统一编码文件编码" class="headerlink" title="3.IDEA统一编码文件编码"></a>3.IDEA统一编码文件编码</h3><p>当前工程编码设置</p>
+<p>File-&gt;settings-&gt;Editor -&gt;File Encodings</p>
+<p>Global Encoding     Project Encodings       Default encoding for properties files 全都设置UTF-8</p>
+<p>勾选 Transpatrent native-to-ascii conversion</p>
+<p>全局编码设置</p>
+<p>File-&gt;New projects settings -&gt;settings for new projects-&gt;settings-&gt;editor-&gt;file encodings</p>
+<p>把transparent native-to-ascII conversion 勾选上即可。</p>
+<h3 id="4-Intellij-idea-用快捷键自动生成序列化id"><a href="#4-Intellij-idea-用快捷键自动生成序列化id" class="headerlink" title="4.Intellij idea 用快捷键自动生成序列化id"></a>4.Intellij idea 用快捷键自动生成序列化id</h3><p>Intellij idea用快捷键自动生成序列化id</p>
+<p>类实现了Serializable接口之后，鼠标放在类上之后就能生成SerialVersionUID </p>
+<p>设置：settings -&gt;Editor-&gt;inspections-&gt;serialization issues -&gt;选择图中的选项。serilizable class without ‘serialVersioinUID’</p>
+<h2 id="好用的快捷键"><a href="#好用的快捷键" class="headerlink" title="好用的快捷键"></a>好用的快捷键</h2><ol>
+<li><p>alt+enter 修复代码</p>
+</li>
+<li><p>ctrl+D 复制一行到下一行</p>
+</li>
+<li><p>ctrl+C ctrl+V ctrl+X 都不必用鼠标选择，直接将光标放在目标行，就能实现</p>
+</li>
+<li><p>ctrl+alt+L 美化代码</p>
+</li>
+<li><p>ctrl+alt+o 优化导包（上一部分已实现自动优化导包）</p>
+</li>
+<li><p>快速补全分号 ctrl+shift+enter</p>
+</li>
+<li><p>修改快捷键</p>
+<p>File-&gt;settings-&gt;Keymap</p>
+</li>
+<li><p>建议修改的</p>
+<p>（find in path）常用 推荐修改 alt+R</p>
+<p>（generate）常用 推荐修改 alt+e</p>
+<h2 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h2><p>1.shift+alt+ctrl加鼠标点击，进行多行同时操作</p>
+<p>2.分屏操作</p>
+<p>2.模板使用</p>
+</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://space.bilibili.com/384087053?spm_id_from=333.788.b_765f7570696e666f.1">IT楠老师</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1np4y1y7CP?from=search&amp;seid=209557586085212775">https://www.bilibili.com/video/BV1np4y1y7CP?from=search&amp;seid=209557586085212775</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> Donate<div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/vxQRCode.png" target="_blank"><img class="post-qr-code-img" src="/img/vxQRCode.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/zfbQRCode.jpg" target="_blank"><img class="post-qr-code-img" src="/img/zfbQRCode.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2020/10/15/markdown%20%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0/"><img class="next-cover" src="https://w.wallhaven.cc/full/g8/wallhaven-g83m3d.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">Markdown 基本语句用法</div></div></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/head.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Southblock</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length_num">3</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length_num">1</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xxxxx" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:3260189532@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">博客先这样吧，后期再添加图片模块、分类模块、友链模块、评论板块、私信板块、捐赠清单板块（我自己donate自己2333）等等</div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="card-content"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#IDEA%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.</span> <span class="toc-text">IDEA相关设置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9C%8B%E7%9D%80%E7%88%BD"><span class="toc-number">1.1.</span> <span class="toc-text">看着爽</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%AD%97%E4%BD%93%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.字体设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.1.2.</span> <span class="toc-text">2.主题设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E8%AE%BE%E7%BD%AE%E9%BC%A0%E6%A0%87%E6%82%AC%E6%B5%AE%E6%8F%90%E7%A4%BA"><span class="toc-number">1.1.3.</span> <span class="toc-text">3.设置鼠标悬浮提示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%98%BE%E7%A4%BA%E6%96%B9%E6%B3%95%E5%88%86%E5%89%B2%E7%AC%A6"><span class="toc-number">1.1.4.</span> <span class="toc-text">4.显示方法分割符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E7%9D%80%E7%88%BD"><span class="toc-number">1.2.</span> <span class="toc-text">用着爽</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%BF%BD%E7%95%A5%E5%A4%A7%E5%B0%8F%E5%86%99-%E6%8F%90%E7%A4%BA"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.忽略大小写 提示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%87%AA%E5%8A%A8%E5%AF%BC%E5%8C%85%EF%BC%8C%E8%87%AA%E5%8A%A8%E4%BC%98%E5%8C%96%E5%AF%BC%E5%8C%85"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.自动导包，自动优化导包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-IDEA%E7%BB%9F%E4%B8%80%E7%BC%96%E7%A0%81%E6%96%87%E4%BB%B6%E7%BC%96%E7%A0%81"><span class="toc-number">1.2.3.</span> <span class="toc-text">3.IDEA统一编码文件编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Intellij-idea-%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E5%BA%8F%E5%88%97%E5%8C%96id"><span class="toc-number">1.2.4.</span> <span class="toc-text">4.Intellij idea 用快捷键自动生成序列化id</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A5%BD%E7%94%A8%E7%9A%84%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-number">1.3.</span> <span class="toc-text">好用的快捷键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E6%8A%80%E5%B7%A7"><span class="toc-number">1.4.</span> <span class="toc-text">小技巧</span></a></li></ol></li></ol></div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2020/10/18/IDEA%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/" title="IDEA相关配置"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="IDEA相关配置"/></a><div class="content"><a class="title" href="/2020/10/18/IDEA%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/" title="IDEA相关配置">IDEA相关配置</a><time datetime="2020-10-18T05:11:00.000Z" title="Created 2020-10-18 13:11:00">2020-10-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/10/15/markdown%20%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0/" title="Markdown 基本语句用法"><img src="https://w.wallhaven.cc/full/g8/wallhaven-g83m3d.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Markdown 基本语句用法"/></a><div class="content"><a class="title" href="/2020/10/15/markdown%20%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0/" title="Markdown 基本语句用法">Markdown 基本语句用法</a><time datetime="2020-10-14T16:00:00.000Z" title="Created 2020-10-15 00:00:00">2020-10-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/10/14/hello-world/" title="Hello World"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2020/10/14/hello-world/" title="Hello World">Hello World</a><time datetime="2020-10-13T16:00:00.000Z" title="Created 2020-10-14 00:00:00">2020-10-14</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 By Southblock</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Surprise!</div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="Switch Between Traditional Chinese And Simplified Chinese">简</button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></section><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="https://unpkg.com/xiaokang-style/butterfly/js/xkTool.js"></script><script src="/js/xiaokang.js"></script><div class="aplayer no -destroy" data-id="2714618220" data-server="netease" data-type="playlist" date-listmaxheight="70px" data-fixed="true" data-mini="true" data-listFolded="false" data-order="list" data-preload="auto" data-autoplay="fasle" muted></div><script src="https://cdn.jsdelivr.net/gh/lete114/CDN/Sum/sakura.js"></script><script id="canvas_nest" defer="defer" color="200,0,0" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config_change',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  $('script[data-pjax]').each(function () {
+    $(this).parent().append($(this).remove())
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  if (typeof gtag === 'function') {
+    gtag('config', '', {'page_path': window.location.pathname});
+  }
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+
+document.addEventListener('pjax:send', function () {
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  $(window).off('scroll')
+
+  //reset readmode
+  $('body').hasClass('read-mode') && $('body').removeClass('read-mode')
+
+})</script></div></body></html>
