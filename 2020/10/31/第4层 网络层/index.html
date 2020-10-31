@@ -1,0 +1,307 @@
+<!DOCTYPE html><html lang="zh-cn" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Southblock's Blogs | Southblock's Blogs</title><meta name="author" content="Southblock"><meta name="copyright" content="Southblock"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="4.1 网络层提供的服务(转载学习)4.1.1 网络层的作用负责在不同的网络之间(基于数据包的IP地址)尽力转发数据包，不负责丢包重传和接收顺序。有点像送快递，一个人往另一个地方寄快递，每个快递走不同的路线，可能后发的先到了，也可能丢件了。但是网络层不管这些，只管寄快递。数据包在Internet中的传输，Internet既有局域网，又有广域网，既有光纤，又有铜线，无线，还有不同的协议，这是Inte">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Southblock&#39;s Blogs">
+<meta property="og:url" content="http://example.com/2020/10/31/%E7%AC%AC4%E5%B1%82%20%E7%BD%91%E7%BB%9C%E5%B1%82/index.html">
+<meta property="og:site_name" content="Southblock&#39;s Blogs">
+<meta property="og:description" content="4.1 网络层提供的服务(转载学习)4.1.1 网络层的作用负责在不同的网络之间(基于数据包的IP地址)尽力转发数据包，不负责丢包重传和接收顺序。有点像送快递，一个人往另一个地方寄快递，每个快递走不同的路线，可能后发的先到了，也可能丢件了。但是网络层不管这些，只管寄快递。数据包在Internet中的传输，Internet既有局域网，又有广域网，既有光纤，又有铜线，无线，还有不同的协议，这是Inte">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
+<meta property="article:published_time" content="2020-10-31T11:33:56.748Z">
+<meta property="article:modified_time" content="2020-10-31T11:30:55.865Z">
+<meta property="article:author" content="Southblock">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2020/10/31/%E7%AC%AC4%E5%B1%82%20%E7%BD%91%E7%BB%9C%E5%B1%82/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2020-10-31 19:30:55'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {
+  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }
+})()</script><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Southblock's Blogs" type="application/atom+xml">
+</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/head.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">Articles</div><div class="length_num">12</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">Tags</div><div class="length_num">2</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-history"></i><span> 历史博客</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 关于</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于作者</span></a></li><li><a class="site-page" href="/comments/"><i class="fa-fw far fa-edit"></i><span> 留言板</span></a></li></ul></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Southblock's Blogs</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-history"></i><span> 历史博客</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 关于</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于作者</span></a></li><li><a class="site-page" href="/comments/"><i class="fa-fw far fa-edit"></i><span> 留言板</span></a></li></ul></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">No title</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2020-10-31T11:33:56.748Z" title="Created 2020-10-31 19:33:56">2020-10-31</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2020-10-31T11:30:55.865Z" title="Updated 2020-10-31 19:30:55">2020-10-31</time></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="4-1-网络层提供的服务-转载学习"><a href="#4-1-网络层提供的服务-转载学习" class="headerlink" title="4.1 网络层提供的服务(转载学习)"></a>4.1 网络层提供的服务(转载学习)</h1><h2 id="4-1-1-网络层的作用"><a href="#4-1-1-网络层的作用" class="headerlink" title="4.1.1 网络层的作用"></a>4.1.1 网络层的作用</h2><p>负责在不同的网络之间(基于数据包的IP地址)尽力转发数据包，不负责丢包重传和接收顺序。<br>有点像送快递，一个人往另一个地方寄快递，每个快递走不同的路线，可能后发的先到了，也可能丢件了。但是网络层不管这些，只管寄快递。<br><img src="https://img-blog.csdnimg.cn/20200103224039867.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2l3YW5kZXJ1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>数据包在Internet中的传输，Internet既有局域网，又有广域网，既有光纤，又有铜线，无线，还有不同的协议，这是Internet复杂所在。<br>路由器是三层设备：能看到网络层的IP地址来选择路径。<br><img src="https://img-blog.csdnimg.cn/20200103224044522.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2l3YW5kZXJ1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="4-1-2-互联网络与虚拟互联网络"><a href="#4-1-2-互联网络与虚拟互联网络" class="headerlink" title="4.1.2 互联网络与虚拟互联网络"></a>4.1.2 互联网络与虚拟互联网络</h2><p>(1)互联网互联的设备<br>中间设备又称为中间系统或中继(relay)系统。</p>
+<blockquote>
+<p>-&gt;物理层中继系统：转发器(repeater)，有点像集线器。<br>-&gt;数据链路层中继系统：网桥或桥接器(bridge)。<br>-&gt;网络层中继系统：路由器(router)。<br>-&gt;传输层/应用层中继系统：网关(gateway)器。<br>网关就是路由器接口的地址。一般是本网段第一个地址。</p>
+</blockquote>
+<p>(2)网络需要解决的问题<br><img src="https://img-blog.csdnimg.cn/20200105161422907.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2l3YW5kZXJ1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>(3)虚拟网络把复杂的Internet看成一个网络，化简问题。虚拟互联网络就是逻辑互联网络，他的意思就是互联起来的各种物理网络的异构性本来就是客观存在的， 但是我们利用IP协议就可以使这些性能各异的网络从用户看起来好像是一个统一的网络，而不用考虑具体的网络异构细节。<br><img src="https://img-blog.csdnimg.cn/20200103224137911.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2l3YW5kZXJ1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h1 id="4-2-网络设备和OSI参考模型的关系"><a href="#4-2-网络设备和OSI参考模型的关系" class="headerlink" title="4.2 网络设备和OSI参考模型的关系"></a>4.2 网络设备和OSI参考模型的关系</h1><h2 id="4-2-1举例，PC4向PC3传输数据"><a href="#4-2-1举例，PC4向PC3传输数据" class="headerlink" title="4.2.1举例，PC4向PC3传输数据"></a>4.2.1举例，PC4向PC3传输数据</h2><p><img src="https://img-blog.csdnimg.cn/20200103224145981.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2l3YW5kZXJ1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>PC：计算机；Hub：集线器；Switch：交换机；Router：路由</p>
+<p><strong>发送端(封装)：</strong></p>
+<blockquote>
+<p>(1)应用层准备要传输的数据；<br>(2)传输层把文件进行分段并编号；(数据段)<br>(3)网络层把传输层的每一个数据包增加原IP地址和目标IP地址；(数据包)<br>(4)数据链路层把每个数据加上MAC地址；两种情况：(数据帧)<br>使用自己的子网掩码，判断自己和目标地址分别在哪个网段，若在同一个网段(不过路由器)，通过ARP协议广播的方式得到目标IP地址的MAC地址，然后就能封装出一个数据帧；如果子网掩码不是一个网段(用与运算)，通过ARP协议广播的方式得到路由器(网关)的MAC地址，然后把数据通过交换机发送到路由器M2，因为M2和M3是点对点通信，没有别的主机，所以它们之间的MAC地址就是FF。<br>(5)物理层把数据帧变成数字信号(bit流)</p>
+</blockquote>
+<p><strong>接收端(解封)：</strong></p>
+<blockquote>
+<p>(1)交换机Hub0接收bit流，能对数据进行存储转发。它根据数据帧的MAC地址，确定数据是从哪来的，要去哪。<br>(2)路由器M2获取交换机的数据包，识别其中的IP地址，根据路由表选择出口，它无法识别数据段内容。<br>(3)路由器M2到M3是点对点通信，遵守PPP协议。<br>(4)PC3收到bit流后，数据链路层发现MAC地址是自己的，去掉MAC地址给它的网络层，网络层去掉IP地址给传输层，传输层把数据给应用层，应用层把各个数据拼接起来。</p>
+</blockquote>
+<h2 id="4-2-2-路由器-交换机-集线器会不会中病毒"><a href="#4-2-2-路由器-交换机-集线器会不会中病毒" class="headerlink" title="4.2.2 路由器/交换机/集线器会不会中病毒"></a>4.2.2 路由器/交换机/集线器会不会中病毒</h2><p>不会，路由器不能识别数据内容。它只负责信息的传递。但是病毒会影响网络设备。因为病毒会占用网络流量。</p>
+<h1 id="4-3-ARP协议"><a href="#4-3-ARP协议" class="headerlink" title="4.3 ARP协议"></a>4.3 ARP协议</h1><h2 id="4-3-1-TCP-IP协议层次关系"><a href="#4-3-1-TCP-IP协议层次关系" class="headerlink" title="4.3.1 TCP/IP协议层次关系"></a>4.3.1 TCP/IP协议层次关系</h2><p><img src="https://img-blog.csdnimg.cn/20200103224222401.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2l3YW5kZXJ1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>IP协议：把数据包从一个网段转到另一个网段，就是用来选择路径用的。<br>ARP为IP服务，IP为ICMP/IGMP服务。</p>
+<h2 id="4-3-2-ARP协议的作用"><a href="#4-3-2-ARP协议的作用" class="headerlink" title="4.3.2 ARP协议的作用"></a>4.3.2 ARP协议的作用</h2><p>将IP地址通过广播(本网段，不通过路由器)，目标MAC地址是FF-FF-FF-FF-FF-FF，解析目标IP地址的MAC地址。<br>ARP是解决同一个局域网上的主机或路由器的IP地址和MAC地址的映射关系。如果所找的主机和原主机不在同一个局域网上，那么就要通过ARP找一个位于本局域网上的某个路由器的MAC地址，然后把分组发送给这个路由器，让这个路由器把分组转发给下一个网络。剩下的工作就由下一个网络来做。<br>从IP地址到MAC地址的解析是自动进行的，主机的用户对这种地址解析过程是不知情的。<br>只要主机或路由器要和本网络上的另一个已知IP地址的主机或路由器进行通信，ARP协议就会自动地将该IP地址解析为链路层所需要的MAC地址。</p>
+<h2 id="4-3-3-使用ARP的四种典型情况"><a href="#4-3-3-使用ARP的四种典型情况" class="headerlink" title="4.3.3 使用ARP的四种典型情况"></a>4.3.3 使用ARP的四种典型情况</h2><p>(1)发送方是主机，要把IP数据报发送到本网络的另一个主机，此时用ARP找到目标主机的MAC地址；<br>(2)发送方是主机，要把IP数据报发送到另一个网络的另一个主机，此时用ARP找到本网络上一个路由器的MAC地址，剩下的工作由路由器进行；<br>(3)发送方是路由器，要把IP数据报发送到本网络的另一个主机，此时用ARP找到目标主机的MAC地址；<br>(4)发送方是路由器，要把IP数据报发送到另一个网络的另一个主机，此时用ARP找到本网络上一个路由器的MAC地址，剩下的工作由路由器进行；</p>
+<h2 id="4-3-4-逆地址解析协议RARP"><a href="#4-3-4-逆地址解析协议RARP" class="headerlink" title="4.3.4 逆地址解析协议RARP"></a>4.3.4 逆地址解析协议RARP</h2><p>只知道自己MAC地址就能获得其IP地址。</p>
+<h2 id="4-3-5-ARP欺骗-网络执法官-ARP防火墙-实验课"><a href="#4-3-5-ARP欺骗-网络执法官-ARP防火墙-实验课" class="headerlink" title="4.3.5 ARP欺骗/网络执法官/ARP防火墙-实验课"></a>4.3.5 ARP欺骗/网络执法官/ARP防火墙-实验课</h2><p>如果同一网段中有电脑中毒，可能会把中毒电脑的MAC地址传回去。</p>
+<h1 id="4-4-网际控制报文协议ICMP"><a href="#4-4-网际控制报文协议ICMP" class="headerlink" title="4.4 网际控制报文协议ICMP"></a>4.4 网际控制报文协议ICMP</h1><h2 id="4-4-1-ICMP"><a href="#4-4-1-ICMP" class="headerlink" title="4.4.1 ICMP"></a>4.4.1 ICMP</h2><p>ICMP：在IP之上，用来测试网络层有没有故障。使用最多的命令是ping。<br>为了提高IP数据报交付成功的机会，在网络层使用了ICMP(Internet Control Message Protocol)。<br>ICMP允许主机或路由器报告差错情况和提供有关异常情况的报告；<br>ICMP不是高层协议，而是IP层协议；<br>ICMP报文件为IP层数据报的数据加上数据报的首部，组成IP数据报发送出去。</p>
+<h2 id="4-4-2-ping-Packet-Internet-Grope-命令诊断网络故障"><a href="#4-4-2-ping-Packet-Internet-Grope-命令诊断网络故障" class="headerlink" title="4.4.2 ping(Packet Internet Grope)命令诊断网络故障"></a>4.4.2 ping(Packet Internet Grope)命令诊断网络故障</h2><p>PING是网络层命令。<br>TTL是数据报的生存时间每过一个路由器就会减1，作用是防止数据报在网络中循环。TTL默认初始值如下：<br>Linux 64<br>Windows 128<br>Unix 256<br>可以根据TTL值粗略判定对方是什么系统。</p>
+<p>(1)PING,因特网包套所起，用于测试网络连接量的程序。ping发送一饿ICMP回声请求消息给目的地并报告是否收到所希望的ICMP回声应答。<br>(2)ping指端对端联通，通常用作可用性检测，但是某些病毒会强行大量远程执行ping命令抢占你的网络资源，导致系统网速变慢。严禁ping入侵作为大多数防火墙的一个基本功能提供给用户进行选择。<br>(3)如果打开IE浏览器访问网站失败，可以通过ping命令测试到Internet的网络连通，可以为你排除网络故障提供线索。</p>
+<h2 id="4-4-3-ping和pathping命令"><a href="#4-4-3-ping和pathping命令" class="headerlink" title="4.4.3 ping和pathping命令"></a>4.4.3 ping和pathping命令</h2><p>QQ能登上，网页打不开是为什么？ 网络层没有问题，域名解析有问题。<br>pathping 能跟踪数据包路径，发现出问题的位置。<br>Windows上跟踪数据包路径的命令：tracerert 10.7.1.53<br>路由器上跟踪数据包路径的命令：traceroute 12.0.0.3</p>
+<h1 id="4-5-IGMP协议和多播组播"><a href="#4-5-IGMP协议和多播组播" class="headerlink" title="4.5 IGMP协议和多播组播"></a>4.5 IGMP协议和多播组播</h1><p>点到点通信：<br>广播：目标MAC地址全是F，目标IP地址全是255，也就是全是1.全网广播不能跨越路由器。<br>组播=多播：分组广播。</p>
+<h2 id="4-5-1-访问多播视频节目"><a href="#4-5-1-访问多播视频节目" class="headerlink" title="4.5.1 访问多播视频节目"></a>4.5.1 访问多播视频节目</h2><p>使用多播一般用于直播，网络会议，能够节省带宽。<br>IGMP协议的作用就是周期性扫描本网段内有没有主机在访问多播数据包。</p>
+<h1 id="4-6-IP数据包的结构"><a href="#4-6-IP数据包的结构" class="headerlink" title="4.6 IP数据包的结构"></a>4.6 IP数据包的结构</h1><p>注意，ARP数据包不是这个格式。<br>首部：第一部分是固定长度，20字节，是所有IP数据包必须具有的。后一部分是可选字段，长度可变。<br><img src="https://img-blog.csdnimg.cn/20200103224342694.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2l3YW5kZXJ1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>每一行32bit相当于1个字节，一共5行，共20字节。<br><img src="https://img-blog.csdnimg.cn/20200103224429788.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2l3YW5kZXJ1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>(1)版本：用来表示TCP/IP是哪个版本，ipv4还是ipv6.<br>(2)区分服务：确定更高的传输优先级。<br>(3)总长度：确定数据部分长度。一共是16位，最多有2^16-1=65535字节。</p>
+<blockquote>
+<p>注意，网络层，数据包最大65535字节；而数据链路层数据最大是1500字节，是不一样的。所以说，一旦超过数据链路层的最大要求时(网络层数据部分超过1480字节)，数据包会分片。最大传输单元MTU。</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20200103224445401.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2l3YW5kZXJ1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<blockquote>
+<p>数据包分片：把数据分割，分别添加IP地址，通过网络发给目标MAC地址。目标在通过网络层拼接。传送过程中可能会丢包，或者后发的先到(泪滴攻击就是利用目标机发送破坏的IP包(重叠的包货过大的包负荷)可以通过TCP/IP协议来瘫痪各种不同的操作系统)。所以需要编号。</p>
+</blockquote>
+<p>(4)标识：如果出现数据包分片，那么标识用来确定哪些数据包是需要组合的。<br>(5)标志：确定该数据包是完整的还是分片中的一部分。占3位，只有前两位有用，标志字段最低位是MF(More Fragment)，MF=1表示后面还有分片，MF=0表示最后一个分片。标志字段中间一位是DF(Don’t Fragment)，只有DF=0才允许分片。<br>(6)片偏移：偏移等于当前字节在数据部分的第几个再除以8.(下图是一个举例)<br><img src="https://img-blog.csdnimg.cn/2020010322450658.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2l3YW5kZXJ1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>(7)生存时间：就是TTL，time to live，每过一个路由器就减1。8位二进制。防止数据包在网络中循环。<br>(8)协议：用协议号标识数据部分是什么数据。<br><img src="https://img-blog.csdnimg.cn/20200103224518593.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2l3YW5kZXJ1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<blockquote>
+<p>ICMP协议号：1；<br>IGMP协议号：2；<br>TCP协议号：6；<br>UDP协议号：17；域名解析<br>IPv6协议号：41；<br>OSPF协议号：89；</p>
+</blockquote>
+<p>(9)首部检验和：16位，只检验数据报的首部，不检验数据部分。这里不是采用CRC检验码而是采用简单的计算方法。每经过一个路由器就会检验一次。<br><img src="https://img-blog.csdnimg.cn/20200103224539933.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2l3YW5kZXJ1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>(10)源地址和目的地址都是IP地址，32位，只符合IPv4。IPv6是128位。<br>(11)可变部分：一般没用。</p>
+<h1 id="4-7-IP协议"><a href="#4-7-IP协议" class="headerlink" title="4.7 IP协议"></a>4.7 IP协议</h1><p>(1)网络畅通的条件<br>沿途路由器必须知道下一跳给谁，数据包有去有回。<br><img src="https://img-blog.csdnimg.cn/20200103224613301.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2l3YW5kZXJ1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="4-7-1-静态路由"><a href="#4-7-1-静态路由" class="headerlink" title="4.7.1 静态路由"></a>4.7.1 静态路由</h2><p>需要管理员告诉路由器所有没有直连的网络下一跳给谁。<br>适合于小规模网络，不能自动调整路由。</p>
+<h2 id="4-7-2-动态路由"><a href="#4-7-2-动态路由" class="headerlink" title="4.7.2 动态路由"></a>4.7.2 动态路由</h2><p>(1)RIP协议<br>周期性广播(30s)路由表，选择路径的依据是最少的跳数，最大跳数是15跳，所以一般不适合大网络。<br>(2)OSPF协议<br>根据带宽选择路径。</p>
+<h1 id="4-8-子网掩码"><a href="#4-8-子网掩码" class="headerlink" title="4.8 子网掩码"></a>4.8 子网掩码</h1><p>能够帮助路由器判断对应主机是否在同一个网段中。<br><img src="https://img-blog.csdnimg.cn/20200105161511780.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2l3YW5kZXJ1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h1 id="4-9-ABCDE类网络地址"><a href="#4-9-ABCDE类网络地址" class="headerlink" title="4.9 ABCDE类网络地址"></a>4.9 ABCDE类网络地址</h1><p>网络地址(网络号)唯一指定了每个网络。同一网络中的每台计算机都共享相同的网络地址，并用它作为自己IP地址的一部分。ABC对应的子网掩码分别是255.0.0.0和255.255.0.0和255.255.255.0<br><img src="https://img-blog.csdnimg.cn/20200105161549762.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2l3YW5kZXJ1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>特殊的几个地址</p>
+<blockquote>
+<p>127.0.0.1 本地换回地址<br>169.254.0.0<br>10.0.0.0，172.16.0.0–172.31.0.0，192.168.0.0–192.168.255.0 保留的私网地址</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20200105161615892.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2l3YW5kZXJ1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h1 id="4-10-子网划分"><a href="#4-10-子网划分" class="headerlink" title="4.10 子网划分"></a>4.10 子网划分</h1><p><img src="https://img-blog.csdnimg.cn/20200105161720106.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2l3YW5kZXJ1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200105161740472.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2l3YW5kZXJ1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>注意，全为1是广播，所以63，127，191，254不选<br><img src="https://img-blog.csdnimg.cn/20200105161804726.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2l3YW5kZXJ1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><strong>参考文献</strong><br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av9876107?p=7">https://www.bilibili.com/video/av9876107?p=7</a></p>
+<p>[<a target="_blank" rel="noopener" href="https://blog.csdn.net/iwanderu/article/details/103795715]">https://blog.csdn.net/iwanderu/article/details/103795715]</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Southblock</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2020/10/31/%E7%AC%AC4%E5%B1%82%20%E7%BD%91%E7%BB%9C%E5%B1%82/">http://example.com/2020/10/31/%E7%AC%AC4%E5%B1%82%20%E7%BD%91%E7%BB%9C%E5%B1%82/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> Donate<div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/vxQRCode.png" target="_blank"><img class="post-qr-code-img" src="/img/vxQRCode.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/zfbQRCode.jpg" target="_blank"><img class="post-qr-code-img" src="/img/zfbQRCode.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/10/31/%E7%AC%AC5%E5%B1%82%20%E4%BC%A0%E8%BE%93%E5%B1%82/"><img class="prev-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info"></div></div></a></div><div class="next-post pull-right"><a href="/2020/10/31/%E7%AC%AC2%E5%B1%82%20%E7%89%A9%E7%90%86%E5%B1%82/"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info"></div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/head.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Southblock</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length_num">12</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length_num">2</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xxxxx" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:3260189532@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">博客先这样吧，后期再添加图片模块、分类模块、友链模块、评论板块、私信板块、捐赠清单板块（我自己donate自己2333）等等</div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="card-content"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#4-1-%E7%BD%91%E7%BB%9C%E5%B1%82%E6%8F%90%E4%BE%9B%E7%9A%84%E6%9C%8D%E5%8A%A1-%E8%BD%AC%E8%BD%BD%E5%AD%A6%E4%B9%A0"><span class="toc-number">1.</span> <span class="toc-text">4.1 网络层提供的服务(转载学习)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-1-%E7%BD%91%E7%BB%9C%E5%B1%82%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">1.1.</span> <span class="toc-text">4.1.1 网络层的作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-2-%E4%BA%92%E8%81%94%E7%BD%91%E7%BB%9C%E4%B8%8E%E8%99%9A%E6%8B%9F%E4%BA%92%E8%81%94%E7%BD%91%E7%BB%9C"><span class="toc-number">1.2.</span> <span class="toc-text">4.1.2 互联网络与虚拟互联网络</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-2-%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87%E5%92%8COSI%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">2.</span> <span class="toc-text">4.2 网络设备和OSI参考模型的关系</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-1%E4%B8%BE%E4%BE%8B%EF%BC%8CPC4%E5%90%91PC3%E4%BC%A0%E8%BE%93%E6%95%B0%E6%8D%AE"><span class="toc-number">2.1.</span> <span class="toc-text">4.2.1举例，PC4向PC3传输数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-2-%E8%B7%AF%E7%94%B1%E5%99%A8-%E4%BA%A4%E6%8D%A2%E6%9C%BA-%E9%9B%86%E7%BA%BF%E5%99%A8%E4%BC%9A%E4%B8%8D%E4%BC%9A%E4%B8%AD%E7%97%85%E6%AF%92"><span class="toc-number">2.2.</span> <span class="toc-text">4.2.2 路由器&#x2F;交换机&#x2F;集线器会不会中病毒</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-3-ARP%E5%8D%8F%E8%AE%AE"><span class="toc-number">3.</span> <span class="toc-text">4.3 ARP协议</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-1-TCP-IP%E5%8D%8F%E8%AE%AE%E5%B1%82%E6%AC%A1%E5%85%B3%E7%B3%BB"><span class="toc-number">3.1.</span> <span class="toc-text">4.3.1 TCP&#x2F;IP协议层次关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-2-ARP%E5%8D%8F%E8%AE%AE%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">3.2.</span> <span class="toc-text">4.3.2 ARP协议的作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-3-%E4%BD%BF%E7%94%A8ARP%E7%9A%84%E5%9B%9B%E7%A7%8D%E5%85%B8%E5%9E%8B%E6%83%85%E5%86%B5"><span class="toc-number">3.3.</span> <span class="toc-text">4.3.3 使用ARP的四种典型情况</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-4-%E9%80%86%E5%9C%B0%E5%9D%80%E8%A7%A3%E6%9E%90%E5%8D%8F%E8%AE%AERARP"><span class="toc-number">3.4.</span> <span class="toc-text">4.3.4 逆地址解析协议RARP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-5-ARP%E6%AC%BA%E9%AA%97-%E7%BD%91%E7%BB%9C%E6%89%A7%E6%B3%95%E5%AE%98-ARP%E9%98%B2%E7%81%AB%E5%A2%99-%E5%AE%9E%E9%AA%8C%E8%AF%BE"><span class="toc-number">3.5.</span> <span class="toc-text">4.3.5 ARP欺骗&#x2F;网络执法官&#x2F;ARP防火墙-实验课</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-4-%E7%BD%91%E9%99%85%E6%8E%A7%E5%88%B6%E6%8A%A5%E6%96%87%E5%8D%8F%E8%AE%AEICMP"><span class="toc-number">4.</span> <span class="toc-text">4.4 网际控制报文协议ICMP</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-4-1-ICMP"><span class="toc-number">4.1.</span> <span class="toc-text">4.4.1 ICMP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-4-2-ping-Packet-Internet-Grope-%E5%91%BD%E4%BB%A4%E8%AF%8A%E6%96%AD%E7%BD%91%E7%BB%9C%E6%95%85%E9%9A%9C"><span class="toc-number">4.2.</span> <span class="toc-text">4.4.2 ping(Packet Internet Grope)命令诊断网络故障</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-4-3-ping%E5%92%8Cpathping%E5%91%BD%E4%BB%A4"><span class="toc-number">4.3.</span> <span class="toc-text">4.4.3 ping和pathping命令</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-5-IGMP%E5%8D%8F%E8%AE%AE%E5%92%8C%E5%A4%9A%E6%92%AD%E7%BB%84%E6%92%AD"><span class="toc-number">5.</span> <span class="toc-text">4.5 IGMP协议和多播组播</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-5-1-%E8%AE%BF%E9%97%AE%E5%A4%9A%E6%92%AD%E8%A7%86%E9%A2%91%E8%8A%82%E7%9B%AE"><span class="toc-number">5.1.</span> <span class="toc-text">4.5.1 访问多播视频节目</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-6-IP%E6%95%B0%E6%8D%AE%E5%8C%85%E7%9A%84%E7%BB%93%E6%9E%84"><span class="toc-number">6.</span> <span class="toc-text">4.6 IP数据包的结构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-7-IP%E5%8D%8F%E8%AE%AE"><span class="toc-number">7.</span> <span class="toc-text">4.7 IP协议</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-7-1-%E9%9D%99%E6%80%81%E8%B7%AF%E7%94%B1"><span class="toc-number">7.1.</span> <span class="toc-text">4.7.1 静态路由</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-7-2-%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1"><span class="toc-number">7.2.</span> <span class="toc-text">4.7.2 动态路由</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-8-%E5%AD%90%E7%BD%91%E6%8E%A9%E7%A0%81"><span class="toc-number">8.</span> <span class="toc-text">4.8 子网掩码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-9-ABCDE%E7%B1%BB%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80"><span class="toc-number">9.</span> <span class="toc-text">4.9 ABCDE类网络地址</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-10-%E5%AD%90%E7%BD%91%E5%88%92%E5%88%86"><span class="toc-number">10.</span> <span class="toc-text">4.10 子网划分</span></a></li></ol></div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2020/10/31/%E7%AC%AC6%E5%B1%82%20%E5%BA%94%E7%94%A8%E5%B1%82/" title="No title"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="/2020/10/31/%E7%AC%AC6%E5%B1%82%20%E5%BA%94%E7%94%A8%E5%B1%82/" title="No title">No title</a><time datetime="2020-10-31T11:33:56.753Z" title="Created 2020-10-31 19:33:56">2020-10-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/10/31/%E7%AC%AC7%E5%B1%82%20%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" title="No title"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="/2020/10/31/%E7%AC%AC7%E5%B1%82%20%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" title="No title">No title</a><time datetime="2020-10-31T11:33:56.753Z" title="Created 2020-10-31 19:33:56">2020-10-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/10/31/%E7%AC%AC8%E5%B1%82%20Internet%E4%B8%8A%E7%9A%84%E9%9F%B3%E9%A2%91%E8%A7%86%E9%A2%91/" title="No title"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="/2020/10/31/%E7%AC%AC8%E5%B1%82%20Internet%E4%B8%8A%E7%9A%84%E9%9F%B3%E9%A2%91%E8%A7%86%E9%A2%91/" title="No title">No title</a><time datetime="2020-10-31T11:33:56.753Z" title="Created 2020-10-31 19:33:56">2020-10-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/10/31/%E7%AC%AC5%E5%B1%82%20%E4%BC%A0%E8%BE%93%E5%B1%82/" title="No title"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="/2020/10/31/%E7%AC%AC5%E5%B1%82%20%E4%BC%A0%E8%BE%93%E5%B1%82/" title="No title">No title</a><time datetime="2020-10-31T11:33:56.753Z" title="Created 2020-10-31 19:33:56">2020-10-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/10/31/%E7%AC%AC4%E5%B1%82%20%E7%BD%91%E7%BB%9C%E5%B1%82/" title="No title"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="/2020/10/31/%E7%AC%AC4%E5%B1%82%20%E7%BD%91%E7%BB%9C%E5%B1%82/" title="No title">No title</a><time datetime="2020-10-31T11:33:56.748Z" title="Created 2020-10-31 19:33:56">2020-10-31</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 By Southblock</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Surprise!</div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="Switch Between Traditional Chinese And Simplified Chinese">简</button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></section><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    let initData = {
+      el: '#vcomment',
+      appId: 'ueCiazmWBoepWiuhg7fpmjbM-gzGzoHsz',
+      appKey: 'TkWamvVG0yiHRJcHK5aeSvPk',
+      placeholder: 'Please leave your footprints',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+    }
+
+    if (true) { 
+      initData.requiredFields= ('nick,mail'.split(','))
+    }
+    
+    if (false) {
+      const otherData = false
+      initData = Object.assign({}, initData, otherData)
+    }
+    
+    const valine = new Valine(initData)
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else $.getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js', initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.querySelector('#vcomment'),loadValine)
+  else setTimeout(() => loadValine(), 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="https://unpkg.com/xiaokang-style/butterfly/js/xkTool.js"></script><script src="/js/xiaokang.js"></script><div class="aplayer no -destroy" data-id="2714618220" data-server="netease" data-type="playlist" date-listmaxheight="70px" data-fixed="true" data-mini="true" data-listFolded="false" data-order="list" data-preload="auto" data-autoplay="fasle" muted></div><script src="https://cdn.jsdelivr.net/gh/lete114/CDN/Sum/sakura.js"></script><script id="canvas_nest" defer="defer" color="200,0,0" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config_change',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  $('script[data-pjax]').each(function () {
+    $(this).parent().append($(this).remove())
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  if (typeof gtag === 'function') {
+    gtag('config', '', {'page_path': window.location.pathname});
+  }
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+
+document.addEventListener('pjax:send', function () {
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  $(window).off('scroll')
+
+  //reset readmode
+  $('body').hasClass('read-mode') && $('body').removeClass('read-mode')
+
+})</script></div></body></html>
