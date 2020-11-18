@@ -2,72 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://example.com/2020/11/18/MySQL%E5%9F%BA%E7%A1%80/</loc>
+    
+    <lastmod>2020-11-18</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://example.com/2020/11/13/%E7%94%A8Java%E7%BC%96%E5%86%99%E9%A3%9E%E6%9C%BA%E5%A4%A7%E6%88%98%E5%B0%8F%E6%B8%B8%E6%88%8F/</loc>
     
     <lastmod>2020-11-13</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2020/10/31/%E7%AC%AC1%E7%AB%A0%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0/</loc>
-    
-    <lastmod>2020-10-31</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2020/10/31/%E7%AC%AC9%E5%B1%82%20%E5%87%A0%E7%A7%8D%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E7%9A%84%E5%AF%B9%E6%AF%94/</loc>
-    
-    <lastmod>2020-10-31</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2020/10/31/%E7%AC%AC8%E5%B1%82%20Internet%E4%B8%8A%E7%9A%84%E9%9F%B3%E9%A2%91%E8%A7%86%E9%A2%91/</loc>
-    
-    <lastmod>2020-10-31</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2020/10/31/%E7%AC%AC7%E5%B1%82%20%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/</loc>
-    
-    <lastmod>2020-10-31</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2020/10/31/%E7%AC%AC6%E5%B1%82%20%E5%BA%94%E7%94%A8%E5%B1%82/</loc>
-    
-    <lastmod>2020-10-31</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2020/10/31/%E7%AC%AC5%E5%B1%82%20%E4%BC%A0%E8%BE%93%E5%B1%82/</loc>
-    
-    <lastmod>2020-10-31</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2020/10/31/%E7%AC%AC4%E5%B1%82%20%E7%BD%91%E7%BB%9C%E5%B1%82/</loc>
-    
-    <lastmod>2020-10-31</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2020/10/31/%E7%AC%AC3%E5%B1%82%20%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/</loc>
-    
-    <lastmod>2020-10-31</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2020/10/31/%E7%AC%AC2%E5%B1%82%20%E7%89%A9%E7%90%86%E5%B1%82/</loc>
-    
-    <lastmod>2020-10-31</lastmod>
     
   </url>
   
@@ -151,7 +95,7 @@
 
   <url>
     <loc>http://example.com/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -159,21 +103,28 @@
   
   <url>
     <loc>http://example.com/tags/Markdown/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/MySQL/</loc>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/tags/Java/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/tags/Linux/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
