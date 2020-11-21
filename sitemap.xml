@@ -4,7 +4,7 @@
   <url>
     <loc>http://example.com/2020/11/18/MySQL%E5%9F%BA%E7%A1%80/</loc>
     
-    <lastmod>2020-11-18</lastmod>
+    <lastmod>2020-11-21</lastmod>
     
   </url>
   
@@ -95,7 +95,7 @@
 
   <url>
     <loc>http://example.com/</loc>
-    <lastmod>2020-11-18</lastmod>
+    <lastmod>2020-11-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -103,28 +103,28 @@
   
   <url>
     <loc>http://example.com/tags/Markdown/</loc>
-    <lastmod>2020-11-18</lastmod>
+    <lastmod>2020-11-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/tags/MySQL/</loc>
-    <lastmod>2020-11-18</lastmod>
+    <lastmod>2020-11-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/tags/Java/</loc>
-    <lastmod>2020-11-18</lastmod>
+    <lastmod>2020-11-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/tags/Linux/</loc>
-    <lastmod>2020-11-18</lastmod>
+    <lastmod>2020-11-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
