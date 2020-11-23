@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2020-11-23T13:50:28.237Z</updated>
+  <updated>2020-11-23T14:41:51.995Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaSE基础</title>
+    <link href="http://example.com/2020/11/23/JavaSE/"/>
+    <id>http://example.com/2020/11/23/JavaSE/</id>
+    <published>2020-11-23T15:15:00.000Z</published>
+    <updated>2020-11-23T14:41:51.995Z</updated>
+    
+    <content type="html"><![CDATA[<hr><h2 id="文档注释Javadoc"><a href="#文档注释Javadoc" class="headerlink" title="文档注释Javadoc"></a>文档注释Javadoc</h2><p>文档注释格式：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">注释内容</span></span><br><span class="line"><span class="comment"><span class="doctag">@author</span> hutbzc</span></span><br><span class="line"><span class="comment"><span class="doctag">@version</span> v1.0</span></span><br><span class="line"><span class="comment">......</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure><p>dos窗口输入命令：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">javadoc -d myHello -author -version HelloJava.java</span><br><span class="line"><span class="comment">//输出注释文件夹名Java代码文件名</span></span><br></pre></td></tr></table></figure><blockquote><p>输出文件内含有：作者，时间，版本，所使用的构造器概要，所使用到的方法概要等等信息</p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;h2 id=&quot;文档注释Javadoc&quot;&gt;&lt;a href=&quot;#文档注释Javadoc&quot; class=&quot;headerlink&quot; title=&quot;文档注释Javadoc&quot;&gt;&lt;/a&gt;文档注释Javadoc&lt;/h2&gt;&lt;p&gt;文档注释格式：&lt;/p&gt;
+&lt;figure class=&quot;hi</summary>
+      
+    
+    
+    
+    
+    <category term="JavaSE" scheme="http://example.com/tags/JavaSE/"/>
+    
+  </entry>
   
   <entry>
     <title>CMD常用命令</title>
