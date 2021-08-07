@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-08-07T08:35:01.470Z</updated>
+  <updated>2021-08-07T08:44:46.573Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://example.com/2021/08/02/ArrayList%E5%92%8CVector%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/"/>
     <id>http://example.com/2021/08/02/ArrayList%E5%92%8CVector%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/</id>
     <published>2021-08-02T02:29:48.000Z</published>
-    <updated>2021-08-07T08:35:01.470Z</updated>
+    <updated>2021-08-07T08:44:46.573Z</updated>
     
     <content type="html"><![CDATA[<h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><p>在JDK8中，ArrayList有三种构造方法。<br>特别的，对于ArrayList()，是造了一个空数组。<br><img src="https://img-blog.csdnimg.cn/3b58fe5ce61f44729a5b12f434d817c4.png" alt="在这里插入图片描述"></p><p>我们直接找到ArrayList的扩容方法<br><img src="https://img-blog.csdnimg.cn/494a7eadc6b94390be113ec2bff7a8f3.png" alt="在这里插入图片描述"></p><p>其中，DEFAULT_CAPACITY=10，minCapacity = 数组现有长度加上需要添加的元素（或集合）的长度。如果现在ArrayLIst存的是一个空数组，那么就取10和minCapacity的最大值。<br><img src="https://img-blog.csdnimg.cn/15507eda1ebe43b18282052f246e7dbe.png" alt="在这里插入图片描述"><br>得到了所需最小容量后，该扩容就扩容<br><img src="https://img-blog.csdnimg.cn/e62880d3f8a24e9bb66a7718afa2a262.png" alt="在这里插入图片描述"></p><p>具体扩容方式<br><img src="https://img-blog.csdnimg.cn/fc310f481b1044e99b3433d05938c818.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0MDc4ODkz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>尝试扩容至1.5倍，如果仍不够，则将所需最小容量作为新数组的容量。</p><p>JDK1.7，和1.8区别不大，只是1.7是在创建对象的时候，就创建了一个长度为10的数组。而1.8是在首次add添加数据时，才会去创建一个长度最少为10的数组。区别类似于饿汉式与懒汉式。<br><img src="https://img-blog.csdnimg.cn/4081b7f052a04c5488653b5d5ec31bd8.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0MDc4ODkz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><h2 id="Vector"><a href="#Vector" class="headerlink" title="Vector"></a>Vector</h2><p>对于Vector<br>jdk1.7和1.8是一样的<br><img src="https://img-blog.csdnimg.cn/93f5d7c52dfb4fdea3eba7cc3331d344.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0MDc4ODkz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>默认初始容量都是10，而且是饿汉式。<br>注意：构造方法中，默认了一个capacityIncrement变量为0。<br>具体扩容细节：<br><img src="https://img-blog.csdnimg.cn/aaf60b5886384b769b5d251767a85b75.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0MDc4ODkz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>我们可以看到，如果指定了capacityIncrement（大于0），就可以让每次扩容时，首先尝试增加capacityIncrement进行扩容。如果没有指定，默认就是0，每次扩容就是尝试翻倍进行扩容。</p><p>另外：想要对比StringBuffer和StringBuilder的扩容机制可以参考：<br>我的另一篇博客：<a href="https://blog.csdn.net/qq_44078893/article/details/119303164">StringBuffer和StringBuilder扩容机制</a></p><p>参考：<a href="https://blog.csdn.net/yin18827152962/article/details/82808325">今天看了下源码,居然发现ArrayList初始容量并不是10</a></p>]]></content>
     
